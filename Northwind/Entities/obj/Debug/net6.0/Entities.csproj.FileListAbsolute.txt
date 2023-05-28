@@ -10,3 +10,5 @@ C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Nor
 C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\Entities\obj\Debug\net6.0\refint\Entities.dll
 C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\Entities\obj\Debug\net6.0\Entities.pdb
 C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\Entities\obj\Debug\net6.0\ref\Entities.dll
+C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\Entities\bin\Debug\net6.0\Entities.runtimeconfig.json
+C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\Entities\obj\Debug\net6.0\Entities.genruntimeconfig.cache

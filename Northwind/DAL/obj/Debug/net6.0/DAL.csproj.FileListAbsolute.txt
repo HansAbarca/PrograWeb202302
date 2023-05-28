@@ -1,0 +1,15 @@
+C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\DAL\bin\Debug\net6.0\DAL.deps.json
+C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\DAL\bin\Debug\net6.0\DAL.dll
+C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\DAL\bin\Debug\net6.0\DAL.pdb
+C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\DAL\bin\Debug\net6.0\Entities.dll
+C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\DAL\bin\Debug\net6.0\Entities.pdb
+C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\DAL\obj\Debug\net6.0\DAL.csproj.CopyComplete
+C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\DAL\obj\Debug\net6.0\DAL.dll
+C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\DAL\obj\Debug\net6.0\refint\DAL.dll
+C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\DAL\obj\Debug\net6.0\DAL.pdb
+C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\DAL\obj\Debug\net6.0\ref\DAL.dll
