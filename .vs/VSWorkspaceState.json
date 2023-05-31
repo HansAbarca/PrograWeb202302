@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Northwind"
   ],
-  "SelectedNode": "\\Northwind.sln",
+  "SelectedNode": "\\Northwind\\Northwind.sln",
   "PreviewInSolutionExplorer": false
 }
