@@ -1,5 +1,8 @@
 ﻿namespace BackEND.Models
 {
+    /// <summary>
+    /// Contiene ShipperID y Company Name
+    /// </summary>
     public class ShipperModel
     {
         public int ShipperId { get; set; }
