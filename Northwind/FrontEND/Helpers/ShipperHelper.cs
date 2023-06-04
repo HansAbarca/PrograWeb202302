@@ -11,6 +11,7 @@ namespace FrontEND.Helpers
         {
             repository = new ServiceRepository();
         }
+        #region GetAll
         public List<ShipperViewModel> GetAll()
         {
 
@@ -25,6 +26,21 @@ namespace FrontEND.Helpers
 
             return lista;
         }
+        #endregion
+        #region GetID
 
+        public ShipperViewModel GetByID(int id)
+        {
+            ShipperViewModel ship = new ShipperViewModel();
+
+            HttpResponseMessage responseMessage = repository.GetResponse("api/Shipper/" + id);
+            var content = responseMessage.Content.ReadAsStringAsync().Result;
+
+            ship = JsonConvert.DeserializeObject<ShipperViewModel>(content);
+
+            return ship;
+        }
+
+        #endregion
     }
 }

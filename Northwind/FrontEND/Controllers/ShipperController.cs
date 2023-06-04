@@ -20,7 +20,9 @@ namespace FrontEND.Controllers
         // GET: ShipperController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            shipperHelper = new ShipperHelper();
+            ShipperViewModel ship = shipperHelper.GetByID(id);
+            return View(ship);
         }
 
         // GET: ShipperController/Create
