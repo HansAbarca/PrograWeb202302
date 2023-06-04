@@ -24,3 +24,7 @@ C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Nor
 C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\FrontEND\obj\Debug\net6.0\FrontEND.pdb
 C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\FrontEND\obj\Debug\net6.0\FrontEND.genruntimeconfig.cache
 C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\FrontEND\obj\Debug\net6.0\ref\FrontEND.dll
+C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\FrontEND\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\FrontEND\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\FrontEND\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\FrontEND\obj\Debug\net6.0\FrontEND.csproj.CopyComplete
