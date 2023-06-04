@@ -1,4 +1,5 @@
-﻿using DAL.Implementations;
+﻿using BackEND.Models;
+using DAL.Implementations;
 using DAL.Interfaces;
 using Entities.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -13,6 +14,26 @@ namespace BackEND.Controllers
     {
         private ICategoryDAL categoryDAL;
 
+        private CategoryModel Convertir (Category category)
+        {
+            return new CategoryModel
+            {
+                CategoryId = category.CategoryId,
+                CategoryName = category.CategoryName,
+                Description = category.Description
+            };
+        }
+
+        private Category Convertir(CategoryModel category)
+        {
+            return new Category
+            {
+                CategoryId = category.CategoryId,
+                CategoryName = category.CategoryName,
+                Description = category.Description
+            };
+        }
+
         #region Constructores
         public CategoryController()
         {
@@ -26,8 +47,13 @@ namespace BackEND.Controllers
         public JsonResult Get()
         {
             IEnumerable<Category> categories = categoryDAL.GetAll();
-           
-            return new JsonResult(categories);
+            List<CategoryModel> models = new List<CategoryModel>();
+
+            foreach (var category in categories)
+            {
+                models.Add(Convertir(category));
+            }
+            return new JsonResult(models);
         }
 
         // GET api/<CategoryController>/5
@@ -35,7 +61,7 @@ namespace BackEND.Controllers
         public JsonResult Get(int id)
         {
             Category category = categoryDAL.Get(id);
-            return new JsonResult(category);
+            return new JsonResult(Convertir(category));
         }
         #endregion
         #region Agregar
