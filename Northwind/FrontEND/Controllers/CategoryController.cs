@@ -21,7 +21,9 @@ namespace FrontEND.Controllers
         // GET: CategoryController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            categoryHelper = new CategoryHelper();
+            CategoryViewModel category = categoryHelper.GetByID(id);
+            return View(category);
         }
 
         // GET: CategoryController/Create

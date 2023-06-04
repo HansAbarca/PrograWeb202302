@@ -10,7 +10,7 @@ namespace FrontEND.Helpers
         {
             repository = new ServiceRepository();
         }
-
+        #region GetALL
         public List<CategoryViewModel> GetAll()
         {
 
@@ -24,6 +24,26 @@ namespace FrontEND.Helpers
 
             return lista;
         }
+        #endregion
+        #region GetByID
+        /// <summary>
+        /// Obtener Category by ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public CategoryViewModel GetByID(int id)
+        {
+            CategoryViewModel category = new CategoryViewModel(); ;
 
+            HttpResponseMessage responeseMessage = repository.GetResponse("api/Category/" + id);
+            var content = responeseMessage.Content.ReadAsStringAsync().Result;
+
+            category = JsonConvert.DeserializeObject<CategoryViewModel>(content);
+
+            return category;
+
+        }
+
+        #endregion
     }
 }
