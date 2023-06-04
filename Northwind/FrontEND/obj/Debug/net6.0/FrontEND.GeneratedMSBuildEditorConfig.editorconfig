@@ -15,8 +15,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\hansg\Desktop\Universidad\Programacion Avanzada Web\PrograWeb202302\Northwind\FrontEND
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/hansg/Desktop/Universidad/Programacion Avanzada Web/PrograWeb202302/Northwind/FrontEND/Controllers/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Q29udHJvbGxlcnNcSW5kZXguY3NodG1s
+[C:/Users/hansg/Desktop/Universidad/Programacion Avanzada Web/PrograWeb202302/Northwind/FrontEND/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/hansg/Desktop/Universidad/Programacion Avanzada Web/PrograWeb202302/Northwind/FrontEND/Views/Home/Index.cshtml]
