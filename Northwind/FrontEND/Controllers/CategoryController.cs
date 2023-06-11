@@ -50,13 +50,15 @@ namespace FrontEND.Controllers
         // GET: CategoryController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            categoryHelper = new CategoryHelper();
+            CategoryViewModel category = categoryHelper.GetByID(id);
+            return View(category);
         }
 
         // POST: CategoryController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(CategoryViewModel category)
         {
             try
             {

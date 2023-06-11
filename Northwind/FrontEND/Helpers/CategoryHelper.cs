@@ -1,4 +1,5 @@
 ﻿using FrontEND.Models;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace FrontEND.Helpers
@@ -42,6 +43,19 @@ namespace FrontEND.Helpers
 
             return category;
 
+        }
+
+        #endregion
+
+        #region Update
+
+        public CategoryViewModel Edit(CategoryViewModel category)
+        {
+            HttpResponseMessage httpResponse = repository.PutResponse("api/Category/", category);
+            var content = httpResponse.Content.ReadAsStringAsync().Result;
+            CategoryViewModel CategoryAPI = JsonConvert.DeserializeObject<CategoryViewModel>(content);
+
+            return CategoryAPI;
         }
 
         #endregion
