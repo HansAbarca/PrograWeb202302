@@ -59,5 +59,18 @@ namespace FrontEND.Helpers
         }
 
         #endregion
+
+        #region Create
+
+        public CategoryViewModel Add(CategoryViewModel category)
+        {
+            HttpResponseMessage httpResponse = repository.PostResponse("api/Category/", category);
+            var content = httpResponse.Content.ReadAsStringAsync().Result;
+            CategoryViewModel CategoryAPI = JsonConvert.DeserializeObject<CategoryViewModel>(content);
+
+            return CategoryAPI;
+        }
+
+        #endregion
     }
 }
