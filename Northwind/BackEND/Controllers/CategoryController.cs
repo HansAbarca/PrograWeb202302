@@ -74,8 +74,10 @@ namespace BackEND.Controllers
         #region Modificar
         // PUT api/<CategoryController>/5
         [HttpPut]
-        public void Put([FromBody] string value)
+        public JsonResult Put([FromBody] CategoryModel category)
         {
+            categoryDAL.Update(Convertir(category));
+            return new JsonResult(category);
         }
         #endregion
         #region Eliminar

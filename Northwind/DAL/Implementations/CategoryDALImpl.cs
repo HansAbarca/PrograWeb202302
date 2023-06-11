@@ -71,6 +71,7 @@ namespace DAL.Implementations
                 using (unidad = new UnidadDeTrabajo<Category>(new NorthWindContext()))
                 {
                     unidad.genericDAL.Update(entity);
+                    unidad.Complete();
                 }
                 
                 return true;
