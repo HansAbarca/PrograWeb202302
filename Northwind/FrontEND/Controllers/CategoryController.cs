@@ -62,7 +62,9 @@ namespace FrontEND.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                categoryHelper = new CategoryHelper();
+                category = categoryHelper.Edit(category);
+                return RedirectToAction (nameof(Index));
             }
             catch
             {
