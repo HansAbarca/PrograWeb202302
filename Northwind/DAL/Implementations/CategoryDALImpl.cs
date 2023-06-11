@@ -65,7 +65,21 @@ namespace DAL.Implementations
 
         public bool Update(Category entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                // Código donde se puede generar una excepción
+                using (unidad = new UnidadDeTrabajo<Category>(new NorthWindContext()))
+                {
+                    unidad.genericDAL.Update(entity);
+                }
+                
+                return true;
+            }
+            catch (Exception)
+            {
+                // Manejo de la excepción
+                return false;
+            }
         }
     }
 }
