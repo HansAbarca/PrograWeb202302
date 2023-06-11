@@ -15,7 +15,22 @@ namespace DAL.Implementations
         private UnidadDeTrabajo<Category> unidad;
         public bool Add(Category entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                // Código donde se puede generar una excepción
+                using (unidad = new UnidadDeTrabajo<Category>(new NorthWindContext()))
+                {
+                    unidad.genericDAL.Add(entity);
+                    unidad.Complete();
+                }
+
+                return true;
+            }
+            catch (Exception)
+            {
+                // Manejo de la excepción
+                return false;
+            }
         }
 
         public void AddRange(IEnumerable<Category> entities)
