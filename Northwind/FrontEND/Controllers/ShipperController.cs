@@ -75,19 +75,23 @@ namespace FrontEND.Controllers
             }
         }
 
-        // GET: ShipperController/Delete/5
+        // GET: CategoryController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            shipperHelper = new ShipperHelper();
+            ShipperViewModel shipper = shipperHelper.GetByID(id);
+            return View(shipper);
         }
 
-        // POST: ShipperController/Delete/5
+        // POST: CategoryController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(ShipperViewModel shipper)
         {
             try
             {
+                shipperHelper = new ShipperHelper();
+                shipperHelper.Delete(shipper.ShipperId);
                 return RedirectToAction(nameof(Index));
             }
             catch

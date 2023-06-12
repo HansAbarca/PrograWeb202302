@@ -68,21 +68,18 @@ namespace FrontEND.Helpers
         #endregion
         #region Delete
         /// <summary>
-        /// Eliminar shipper by ID
+        /// Delete Shipper by ID
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="shipper"></param>
         /// <returns></returns>
         public ShipperViewModel Delete(int id)
         {
-            ShipperViewModel shipper = new ShipperViewModel(); ;
-
-            HttpResponseMessage responeseMessage = repository.DeleteResponse("api/Shipper/" + id);
-            // var content = responeseMessage.Content.ReadAsStringAsync().Result;
-
-            // category = JsonConvert.DeserializeObject<CategoryViewModel>(content);
+            ShipperViewModel shipper = new ShipperViewModel();
+            HttpResponseMessage httpResponse = repository.DeleteResponse("api/Shipper/" + id);
+            /*var content = httpResponse.Content.ReadAsStringAsync().Result;
+            ShipperViewModel shipperAPI = JsonConvert.DeserializeObject<ShipperViewModel>(content);*/
 
             return shipper;
-
         }
 
         #endregion

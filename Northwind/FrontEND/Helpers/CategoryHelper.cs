@@ -78,7 +78,7 @@ namespace FrontEND.Helpers
         /// <returns></returns>
         public CategoryViewModel Delete(int id)
         {
-            CategoryViewModel category = new CategoryViewModel(); ;
+            CategoryViewModel category = new CategoryViewModel(); 
 
             HttpResponseMessage responeseMessage = repository.DeleteResponse("api/Category/" + id);
           // var content = responeseMessage.Content.ReadAsStringAsync().Result;

@@ -91,7 +91,6 @@ namespace BackEND.Controllers
             {
                 ShipperId = id
             };
-
             shipperDAL.Remove(shipper);
         }
         #endregion
