@@ -70,7 +70,22 @@ namespace DAL.Implementations
         #region Update
         public bool Update(Shipper entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                // Código donde se puede generar una excepción
+                using (unidad = new UnidadDeTrabajo<Shipper>(new NorthWindContext()))
+                {
+                    unidad.genericDAL.Update(entity);
+                    unidad.Complete();
+                }
+
+                return true;
+            }
+            catch (Exception)
+            {
+                // Manejo de la excepción
+                return false;
+            }
         }
         #endregion
     }

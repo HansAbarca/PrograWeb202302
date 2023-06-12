@@ -72,9 +72,11 @@ namespace BackEND.Controllers
         #endregion
         #region Modificar
         // PUT api/<ShipperController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public JsonResult Put([FromBody] ShipperModel shipper)
         {
+            shipperDAL.Update(Convertir(shipper));
+            return new JsonResult(shipper);
         }
         #endregion
         #region Eliminar
