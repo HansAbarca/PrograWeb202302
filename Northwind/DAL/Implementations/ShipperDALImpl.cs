@@ -16,7 +16,22 @@ namespace DAL.Implementations
         #region Add
         public bool Add(Shipper entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                // Código donde se puede generar una excepción
+                using (unidad = new UnidadDeTrabajo<Shipper>(new NorthWindContext()))
+                {
+                    unidad.genericDAL.Add(entity);
+                    unidad.Complete();
+                }
+
+                return true;
+            }
+            catch (Exception)
+            {
+                // Manejo de la excepción
+                return false;
+            }
         }
 
         public void AddRange(IEnumerable<Shipper> entities)

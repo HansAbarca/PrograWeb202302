@@ -66,8 +66,11 @@ namespace BackEND.Controllers
         #region Agregar
         // POST api/<ShipperController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public JsonResult Post([FromBody]ShipperModel shipper)
         {
+            shipperDAL.Add(Convertir(shipper));
+            return new JsonResult(shipper);
+
         }
         #endregion
         #region Modificar
