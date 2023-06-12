@@ -49,18 +49,21 @@ namespace FrontEND.Controllers
         // GET: ShipperController/Edit/5
         public ActionResult Edit(int id)
         {
-            categoryHelper = new CategoryHelper();
-            CategoryViewModel category = categoryHelper.GetByID(id);
-            return View(category);
+            shipperHelper = new ShipperHelper();
+            ShipperViewModel shipper = shipperHelper.GetByID(id);
+            return View(shipper);
         }
 
         // POST: ShipperController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(ShipperViewModel shipper)
         {
             try
             {
+                shipperHelper = new ShipperHelper();
+                shipper = shipperHelper.Edit(shipper);
+
                 return RedirectToAction(nameof(Index));
             }
             catch
