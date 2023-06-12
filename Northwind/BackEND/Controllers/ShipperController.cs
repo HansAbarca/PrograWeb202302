@@ -87,6 +87,12 @@ namespace BackEND.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            Shipper shipper = new Shipper
+            {
+                ShipperId = id
+            };
+
+            shipperDAL.Remove(shipper);
         }
         #endregion
     }
