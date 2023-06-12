@@ -49,7 +49,9 @@ namespace FrontEND.Controllers
         // GET: ShipperController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            categoryHelper = new CategoryHelper();
+            CategoryViewModel category = categoryHelper.GetByID(id);
+            return View(category);
         }
 
         // POST: ShipperController/Edit/5

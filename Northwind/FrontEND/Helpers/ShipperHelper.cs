@@ -42,5 +42,49 @@ namespace FrontEND.Helpers
         }
 
         #endregion
+        #region Update
+
+        public ShipperViewModel Edit(ShipperViewModel shipper)
+        {
+            HttpResponseMessage httpResponse = repository.PutResponse("api/Shipper/", shipper);
+            var content = httpResponse.Content.ReadAsStringAsync().Result;
+            ShipperViewModel shipperAPI = JsonConvert.DeserializeObject<ShipperViewModel>(content);
+
+            return shipperAPI;
+        }
+
+        #endregion
+        #region Create
+
+        public ShipperViewModel Add(ShipperViewModel shipper)
+        {
+            HttpResponseMessage httpResponse = repository.PostResponse("api/Shipper/", shipper);
+            var content = httpResponse.Content.ReadAsStringAsync().Result;
+            ShipperViewModel shipperAPI = JsonConvert.DeserializeObject<ShipperViewModel>(content);
+
+            return shipperAPI;
+        }
+
+        #endregion
+        #region Delete
+        /// <summary>
+        /// Eliminar shipper by ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ShipperViewModel Delete(int id)
+        {
+            ShipperViewModel shipper = new ShipperViewModel(); ;
+
+            HttpResponseMessage responeseMessage = repository.DeleteResponse("api/Shipper/" + id);
+            // var content = responeseMessage.Content.ReadAsStringAsync().Result;
+
+            // category = JsonConvert.DeserializeObject<CategoryViewModel>(content);
+
+            return shipper;
+
+        }
+
+        #endregion
     }
 }
