@@ -34,10 +34,13 @@ namespace FrontEND.Controllers
         // POST: ShipperController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(ShipperViewModel shipper)
         {
             try
             {
+                shipperHelper = new ShipperHelper();
+                shipper = shipperHelper.Add(shipper);
+
                 return RedirectToAction(nameof(Index));
             }
             catch
