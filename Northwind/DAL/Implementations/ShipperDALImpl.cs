@@ -1,5 +1,6 @@
 ﻿using DAL.Interfaces;
 using Entities.Entities;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -19,12 +20,20 @@ namespace DAL.Implementations
         {
             try
             {
-                // Código donde se puede generar una excepción
-                using (unidad = new UnidadDeTrabajo<Shipper>(new NorthWindContext()))
+                string sql="exec [dbo].[sp_AddShipper] @CompanyName";
+                var param = new SqlParameter[]
                 {
-                    unidad.genericDAL.Add(entity);
-                    unidad.Complete();
-                }
+                    new SqlParameter()
+                    {
+                        ParameterName = "@CompanyName",
+                        SqlDbType = System.Data.SqlDbType.VarChar,
+                        Direction = System.Data.ParameterDirection.Input,
+                        Value = entity.CompanyName
+                    },
+                };
+
+                NorthWindContext northWindContext = new NorthWindContext();
+                int resultado = northWindContext.Database.ExecuteSqlRaw(sql, param);
 
                 return true;
             }
