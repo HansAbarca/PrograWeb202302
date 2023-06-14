@@ -46,21 +46,21 @@ namespace DAL.Implementations
         }
         #endregion
         #region get
-        public Shipper Get(int id)
+        public async Task<Shipper> Get(int id)
         {
             Shipper Shipper = null;
             using (unidad = new UnidadDeTrabajo<Shipper>(new NorthWindContext()))
             {
-                Shipper = unidad.genericDAL.Get(id);
+                Shipper = await unidad.genericDAL.Get(id);
             }
             return Shipper;
         }
-        public IEnumerable<Shipper> GetAll()
+        public async Task<IEnumerable<Shipper>> GetAll()
         {
             IEnumerable<Shipper> categories = null;
             using (unidad = new UnidadDeTrabajo<Shipper>(new NorthWindContext()))
             {
-                categories = unidad.genericDAL.GetAll();
+                categories =  await unidad.genericDAL.GetAll();
             }
             return categories;
         }

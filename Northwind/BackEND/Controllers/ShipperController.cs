@@ -41,9 +41,9 @@ namespace BackEND.Controllers
         #region Consultas
         // GET: api/<ShipperController>
         [HttpGet]
-        public JsonResult Get()
+        public async Task<JsonResult> Get()
         {
-            IEnumerable<Shipper> categories = shipperDAL.GetAll();
+            IEnumerable<Shipper> categories = await shipperDAL.GetAll();
             List<ShipperModel> ship = new List<ShipperModel>();
 
             foreach (var category in categories)
@@ -56,9 +56,9 @@ namespace BackEND.Controllers
 
         // GET api/<ShipperController>/5
         [HttpGet("{id}")]
-        public JsonResult Get(int id)
+        public async Task<JsonResult> Get(int id)
         {
-            Shipper shipper = shipperDAL.Get(id);
+            Shipper shipper = await shipperDAL.Get(id);
 
             return new JsonResult(Convertir(shipper));
         }

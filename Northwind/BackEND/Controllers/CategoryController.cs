@@ -44,9 +44,9 @@ namespace BackEND.Controllers
         #region Consultas
         // GET: api/<CategoryController>
         [HttpGet]
-        public JsonResult Get()
+        public async Task<JsonResult> Get()
         {
-            IEnumerable<Category> categories = categoryDAL.GetAll();
+            IEnumerable<Category> categories = await categoryDAL.GetAll();
             List<CategoryModel> models = new List<CategoryModel>();
 
             foreach (var category in categories)
@@ -58,9 +58,9 @@ namespace BackEND.Controllers
 
         // GET api/<CategoryController>/5
         [HttpGet("{id}")]
-        public JsonResult Get(int id)
+        public async Task<JsonResult> Get(int id)
         {
-            Category category = categoryDAL.Get(id);
+            Category category = await categoryDAL.Get(id);
             return new JsonResult(Convertir(category));
         }
         #endregion
