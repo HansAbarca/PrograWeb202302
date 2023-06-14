@@ -1,5 +1,6 @@
 ﻿using DAL.Interfaces;
 using Entities.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,12 +58,33 @@ namespace DAL.Implementations
         }
         public async Task<IEnumerable<Shipper>> GetAll()
         {
-            IEnumerable<Shipper> categories = null;
-            using (unidad = new UnidadDeTrabajo<Shipper>(new NorthWindContext()))
+            List<Shipper> shippers = new List<Shipper>();
+            List<sp_GetAllShippers_Result> resultado;
+            string sql = "[dbo].[sp_GetAllShippers]";
+            NorthWindContext northWindContext = new NorthWindContext();
+
+            resultado = await northWindContext.sp_GetAllShippers_Results
+                .FromSqlRaw(sql)
+                .ToListAsync();
+
+            foreach (var item in resultado)
             {
-                categories =  await unidad.genericDAL.GetAll();
+                shippers.Add(
+                    new Shipper
+                    {
+                        ShipperId = item.ShipperId,
+                        CompanyName = item.CompanyName,
+                        Phone = item.Phone
+                    }
+
+                    );
             }
-            return categories;
+
+            /*            using (unidad = new UnidadDeTrabajo<Shipper>(new NorthWindContext()))
+                        {
+                            categories =  await unidad.genericDAL.GetAll();
+                        }*/
+            return shippers;
         }
         #endregion
         #region Remove
