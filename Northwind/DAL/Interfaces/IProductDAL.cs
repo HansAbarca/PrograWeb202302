@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Interfaces
 {
-    internal interface IProductDAL: IDALGenerico<Product>
+    public interface IProductDAL : IDALGenerico<Product>
     {
     }
 }
