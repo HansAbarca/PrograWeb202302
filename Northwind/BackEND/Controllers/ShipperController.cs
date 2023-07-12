@@ -19,7 +19,8 @@ namespace BackEND.Controllers
             return new ShipperModel
             {
                 ShipperId = shipper.ShipperId,
-                CompanyName = shipper.CompanyName
+                CompanyName = shipper.CompanyName,
+                Picture = shipper.Picture
             };
         }
 
@@ -28,7 +29,8 @@ namespace BackEND.Controllers
             return new Shipper
             {
                 ShipperId = shipper.ShipperId,
-                CompanyName = shipper.CompanyName
+                CompanyName = shipper.CompanyName,
+                Picture = shipper.Picture
             };
         }
 
