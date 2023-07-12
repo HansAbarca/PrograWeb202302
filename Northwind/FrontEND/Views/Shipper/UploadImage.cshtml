@@ -1,10 +1,10 @@
-﻿@model FrontEND.Models.CategoryViewModel
+﻿@model FrontEND.Models.ShipperViewModel
 
 @{
     ViewData["Title"] = "Edit";
 }
 
-<h1>Upload Picture</h1>
+<h1>Upload Image</h1>
 
 <hr />
 <div class="row">
@@ -12,7 +12,7 @@
         <form asp-action="UploadImage" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            @Html.HiddenFor(Model=>Model.CategoryId)
+            @Html.HiddenFor(Model=>Model.ShipperId)
 
             <div class="form-group">
                 <input type="file" asp-for="Picture" class="form-control" name="files" />
@@ -31,5 +31,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

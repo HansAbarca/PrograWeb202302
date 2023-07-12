@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Entities.Entities
 {
-    public partial class NORTHWINDContext : DbContext
+    public partial class NorthWindContext : DbContext
     {
-        public NORTHWINDContext()
+        public NorthWindContext()
         {
         }
 
-        public NORTHWINDContext(DbContextOptions<NORTHWINDContext> options)
+        public NorthWindContext(DbContextOptions<NorthWindContext> options)
             : base(options)
         {
         }

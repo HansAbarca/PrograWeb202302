@@ -83,7 +83,8 @@ namespace DAL.Implementations
                     {
                         ShipperId = item.ShipperId,
                         CompanyName = item.CompanyName,
-                        Phone = item.Phone
+                        Phone = item.Phone,
+                        Picture = item.Picture
                     }
 
                     );

@@ -99,5 +99,36 @@ namespace FrontEND.Controllers
                 return View();
             }
         }
+
+
+        public ActionResult UploadImage(int id)
+        {
+            shipperHelper = new ShipperHelper();
+            ShipperViewModel shipper = shipperHelper.GetByID(id);
+            return View(shipper);
+        }
+
+        [HttpPost]
+        public ActionResult UploadImage(ShipperViewModel shipper, List<IFormFile> files)
+        {
+            if (files.Count > 0)
+            {
+                IFormFile formFile = files[0];
+                using (var ms = new MemoryStream())
+                {
+                    formFile.CopyTo(ms);
+                    shipper.Picture = ms.ToArray();
+                }
+            }
+
+            shipperHelper = new ShipperHelper();
+            ShipperViewModel cat = shipperHelper.GetByID(shipper.ShipperId);
+            cat.Picture = shipper.Picture;
+
+            shipperHelper.Edit(cat);
+
+            return RedirectToAction("Details", new { id = cat.ShipperId });
+        }
+
     }
 }
