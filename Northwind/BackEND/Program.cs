@@ -1,3 +1,4 @@
+using BackEND.Middleware;
 using Entities.Entities;
 using Entities.Utilities;
 using Microsoft.EntityFrameworkCore;
@@ -29,7 +30,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseMiddleware<ApiKeyMiddleware>();
 app.UseAuthorization();
 
 app.MapControllers();
